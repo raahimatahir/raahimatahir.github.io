@@ -208,25 +208,45 @@
         .modal-content {
             position: relative;
             background-color: var(--card-bg);
-            margin: 3% auto;
+            margin: 2% auto;
             padding: 20px;
             border: 1px solid var(--accent-color);
             width: 85%;
             max-width: 900px;
-            height: 85vh;
+            height: 88vh;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
         }
 
+        .modal-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .pdf-link-btn {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .pdf-link-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
         .close-btn {
             color: var(--text-secondary);
-            float: right;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
-            align-self: flex-end;
-            margin-bottom: 10px;
             line-height: 1;
         }
 
@@ -244,6 +264,7 @@
             height: 100%;
             border: none;
             border-radius: 4px;
+            background-color: #ffffff;
         }
     </style>
 </head>
@@ -326,7 +347,7 @@
             <div class="card">
                 <h3>
                     Women's Financial Literacy & Economic Empowerment
-                    <span class="badge" onclick="openReportModal('FL_Completion_Report_Rahima_Tahir.pdf')">Click for Report</span>
+                    <span class="badge" onclick="openReportModal('./FL_Completion_Report_Rahima_Tahir.pdf')">Click for Report</span>
                 </h3>
                 <p class="subtitle">Principal Investigator • Association of Commonwealth Universities (ACU) SDGs Challenge Grant (2023–2024)</p>
                 <span class="grant-tag">Grant Amount: GBP 2,500</span>
@@ -357,7 +378,7 @@
             <div class="card">
                 <h3>
                     SAFE: Anti-Sexual Harassment Awareness 
-                    <span class="badge" onclick="openReportModal('SAFE-Project-Completion-Report-2.pdf')">Click for Report</span>
+                    <span class="badge" onclick="openReportModal('./SAFE-Project-Completion-Report-2.pdf')">Click for Report</span>
                 </h3>
                 <p class="subtitle">Co-Principal Investigator • ACU Higher Education & Martha Farrell Foundation</p>
                 <span class="grant-tag">Grant Amount: GBP 1,000</span>
@@ -420,7 +441,10 @@
     <!-- PDF Viewer Modal Pop-up -->
     <div id="reportModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeReportModal()">&times;</span>
+            <div class="modal-header-bar">
+                <a id="downloadPdfBtn" href="#" target="_blank" class="pdf-link-btn">Open PDF in New Tab ↗</a>
+                <span class="close-btn" onclick="closeReportModal()">&times;</span>
+            </div>
             <div class="modal-body">
                 <iframe id="pdfFrame" src=""></iframe>
             </div>
@@ -444,7 +468,10 @@
         function openReportModal(pdfUrl) {
             const modal = document.getElementById('reportModal');
             const iframe = document.getElementById('pdfFrame');
+            const downloadBtn = document.getElementById('downloadPdfBtn');
+            
             iframe.src = pdfUrl;
+            downloadBtn.href = pdfUrl;
             modal.style.display = 'block';
         }
 
