@@ -28,699 +28,158 @@
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
-            padding: 2.5rem 1rem;
+            padding: 2rem 1rem;
         }
 
         .container {
-            max-width: 920px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        /* Header Section */
         header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-            padding-bottom: 2.5rem;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 2rem;
-        }
-
-        @media (min-width: 640px) {
-            header {
-                flex-direction: row;
-                text-align: left;
-                align-items: flex-start;
-            }
-        }
-
-        .profile-img-container {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 3px solid var(--accent-color);
-            overflow: hidden;
-            flex-shrink: 0;
-            margin-bottom: 1.5rem;
-            background-color: var(--card-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
-        }
-
-        @media (min-width: 640px) {
-            .profile-img-container {
-                margin-bottom: 0;
-                margin-right: 2.5rem;
-            }
+            margin-bottom: 3rem;
         }
 
         .profile-img {
-            width: 100%;
-            height: 100%;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
             object-fit: cover;
-        }
-
-        .header-content h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-        }
-
-        .header-content h2 {
-            font-size: 1.15rem;
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        .header-content p {
-            color: var(--text-secondary);
-            font-size: 0.98rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .contact-info {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
+            border: 3px solid var(--accent-color);
             margin-bottom: 1rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
             color: var(--text-primary);
-            background-color: var(--card-bg);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-            padding: 0.4rem 0.9rem;
-            border-radius: 6px;
-            transition: all 0.2s ease;
         }
 
-        .social-links a:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-        }
-
-        /* Navigation Tabs */
-        .tabs {
-            display: flex;
-            gap: 0.5rem;
-            overflow-x: auto;
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .tab-btn {
-            background: none;
-            border: none;
+        .tagline {
             color: var(--text-secondary);
-            padding: 0.6rem 1.1rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 6px;
-            white-space: nowrap;
-            transition: all 0.2s ease;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .tab-btn:hover {
-            color: var(--text-primary);
+        section {
+            margin-bottom: 2.5rem;
         }
 
-        .tab-btn.active {
-            background-color: var(--card-bg);
+        h2 {
+            font-size: 1.5rem;
             color: var(--accent-color);
-            border: 1px solid var(--border-color);
-        }
-
-        /* Content Sections */
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.75rem;
-            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .card-title {
-            font-size: 1.25rem;
-            color: var(--text-primary);
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 0.25rem;
         }
 
-        .card-title-clickable {
-            cursor: pointer;
-            transition: color 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .card-title-clickable:hover {
+        .subtitle {
             color: var(--accent-color);
-            text-decoration: underline;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
         }
 
-        .click-hint {
-            font-size: 0.75rem;
-            background-color: rgba(56, 189, 248, 0.15);
-            color: var(--accent-color);
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            font-weight: normal;
-            text-decoration: none !important;
-        }
-
-        .card-subtitle {
-            font-size: 1rem;
-            color: var(--accent-color);
-            margin-bottom: 0.4rem;
-        }
-
-        .card-meta {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .card-body {
+        .description {
             color: var(--text-secondary);
             font-size: 0.95rem;
         }
 
-        .card-body h4 {
-            color: var(--text-primary);
-            margin: 1.25rem 0 0.5rem 0;
-            font-size: 1rem;
-        }
-
-        .card-body ul {
-            padding-left: 1.25rem;
-        }
-
-        .card-body li {
-            margin-bottom: 0.6rem;
-        }
-
-        .grant-badge {
-            display: inline-block;
-            background-color: rgba(56, 189, 248, 0.1);
+        .badge {
+            background-color: var(--chip-bg);
             color: var(--accent-color);
+            border: 1px solid var(--border-color);
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .badge:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .grant-tag {
+            background-color: #0369a1;
+            color: #ffffff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 0.5rem 0;
             font-weight: 600;
-            font-size: 0.85rem;
-            margin-top: 0.25rem;
         }
 
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .chip {
-            background-color: var(--chip-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 0.6rem 1.1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .reference-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-        }
-
-        @media (min-width: 640px) {
-            .reference-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        /* Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--modal-bg);
-            backdrop-filter: blur(6px);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal-container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            max-width: 650px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            padding: 2rem;
-            position: relative;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-            animation: modalFadeIn 0.25s ease-out;
-        }
-
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1.25rem;
-            right: 1.25rem;
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            line-height: 1;
-            transition: color 0.2s;
-        }
-
-        .modal-close:hover {
-            color: var(--text-primary);
-        }
-
-        .modal-title {
-            font-size: 1.35rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            padding-right: 2rem;
-        }
-
-        .modal-meta {
-            font-size: 0.88rem;
+        a {
             color: var(--accent-color);
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
+            text-decoration: none;
         }
 
-        .modal-body {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .modal-body h5 {
-            color: var(--text-primary);
-            font-size: 1rem;
-            margin: 1.25rem 0 0.4rem 0;
-        }
-
-        .modal-body ul {
-            padding-left: 1.25rem;
-            margin-bottom: 1rem;
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header -->
+        
         <header>
-            <div class="profile-img-container">
-                <img src="profile.jpg" alt="Rahima Tahir" class="profile-img">
-            </div>
-            <div class="header-content">
-                <h1>Rahima Tahir</h1>
-                <h2>Manager, Linkages and Outreach | PhD Candidate</h2>
-                <p>Passionate professional with extensive experience in international relations, sustainability, and academic outreach. Currently serving as Manager, Linkages and Outreach at Ziauddin University and Hospital, leading initiatives that foster global partnerships, advance institutional sustainability, and promote research-driven engagement.</p>
-                <div class="contact-info">
-                    📍 Karachi, Pakistan | 📞 (+92) 335-0202338
-                </div>
-                <div class="social-links">
-                    <a href="mailto:raahimatahir@gmail.com">Email</a>
-                    <a href="https://www.linkedin.com/in/raahima-tahir-105045131" target="_blank">LinkedIn</a>
-                    <a href="https://orcid.org/0009-0002-6777-3721" target="_blank">ORCID</a>
-                </div>
-            </div>
+            <img src="profile.jpg" alt="Rahima Tahir" class="profile-img" onerror="this.style.display='none'">
+            <h1>Rahima Tahir</h1>
+            <p class="tagline">Public Health & Biosciences | PhD Candidate & Researcher</p>
         </header>
 
-        <!-- Navigation Tabs -->
-        <div class="tabs">
-            <button class="tab-btn active" onclick="switchTab('experience', event)">Experience</button>
-            <button class="tab-btn" onclick="switchTab('achievements', event)">Grants & Achievements</button>
-            <button class="tab-btn" onclick="switchTab('publications', event)">Publications</button>
-            <button class="tab-btn" onclick="switchTab('education', event)">Education</button>
-            <button class="tab-btn" onclick="switchTab('expertise', event)">Expertise & Research</button>
-            <button class="tab-btn" onclick="switchTab('references', event)">References</button>
-        </div>
-
-        <!-- Experience Tab -->
-        <div id="experience" class="tab-content active">
+        <section id="projects">
+            <h2>Featured Projects & Research</h2>
+            
             <div class="card">
-                <div class="card-title">Manager - Linkages and Outreach</div>
-                <div class="card-subtitle">Ziauddin University & Hospital • Karachi, Pakistan</div>
-                <div class="card-meta">Jan 2023 – Ongoing</div>
-                <div class="card-body">
-                    <h4>Primary Responsibilities (International Relations & Sustainability Division):</h4>
-                    <ul>
-                        <li>Lead the International and Sustainability Office, overseeing marketing, public relations, fundraising, and international collaboration to enhance the University's global presence and ensure long-term financial sustainability.</li>
-                        <li>Develop and execute strategic marketing and communication plans to promote the University's academic, healthcare, and research excellence at national and international levels.</li>
-                        <li>Supervise the marketing team in planning and delivering impactful promotional campaigns and stakeholder engagement initiatives.</li>
-                        <li>Conduct market research and competitor analysis to identify growth opportunities, partnerships, and potential areas for collaboration.</li>
-                        <li>Engage with international universities, government bodies, NGOs, and development organisations to establish and strengthen institutional partnerships.</li>
-                        <li>Lead fundraising activities and write high-quality grant proposals for Ziauddin University and Ziauddin Hospital, successfully securing funding from international donors.</li>
-                        <li>Prepare, review, and manage research and grant documentation, ensuring compliance with institutional and donor requirements.</li>
-                        <li>Develop and implement institutional policies and Standard Operating Procedures (SOPs) to improve governance, operational efficiency, and sustainability integration.</li>
-                        <li>Spearhead the University's sustainability agenda, embedding the United Nations Sustainable Development Goals (SDGs) within academic, operational, and strategic frameworks.</li>
-                    </ul>
-
-                    <h4>Secondary Responsibilities (Operations & Support):</h4>
-                    <ul>
-                        <li>Ensure compliance with institutional and regulatory standards in fundraising and partnership activities.</li>
-                        <li>Coordinate with internal departments and external stakeholders to support program implementation and reporting.</li>
-                        <li>Represent the University in national and international forums, conferences, and meetings related to sustainability and higher education.</li>
-                    </ul>
+                <div class="card-header">
+                    <span class="card-title">
+                        SAFE: Anti-Sexual Harassment Awareness
+                        <a href="SAFE-Project-Completion-Report-2.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <span class="badge">Click for Report</span>
+                        </a>
+                    </span>
                 </div>
-            </div>
-        </div>
-
-        <!-- Grants & Achievements Tab -->
-        <div id="achievements" class="tab-content">
-            <div class="card">
-                <div class="card-title card-title-clickable" onclick="openReport('svri')">
-                    Sexual Violence Research Initiative (SVRI) Grant
-                    <span class="click-hint">Click for Report</span>
-                </div>
-                <div class="card-subtitle">Co-Principal Investigator</div>
-                <span class="grant-badge">Grant Amount: USD 116,290</span>
-                <div class="card-body" style="margin-top:0.75rem;">
-                    <strong>Project Title:</strong> "Evaluating Institutional Practices and Survivor Experiences of Gender-Based Violence in STEM and Non-STEM HEIs in Pakistan."
-                </div>
+                <p class="subtitle">Co-Principal Investigator • ACU & Martha Farrell Foundation</p>
+                <span class="grant-tag">Grant Amount: GBP 1,000</span>
+                <p class="description">Led the SAFE Project for Anti-Sexual Harassment Awareness at Ziauddin University.</p>
             </div>
 
-            <div class="card">
-                <div class="card-title card-title-clickable" onclick="openReport('acu_sdg')">
-                    Association of Commonwealth Universities (ACU) SDGs Challenge Grant
-                    <span class="click-hint">Click for Report</span>
-                </div>
-                <div class="card-subtitle">Principal Investigator (2023–2024)</div>
-                <span class="grant-badge">Grant Amount: GBP 2,500</span>
-                <div class="card-body" style="margin-top:0.75rem;">
-                    <strong>Project Title:</strong> "Supporting Women's Economic Empowerment by Addressing the Financial Literacy and Gender-based Disparities in Access to Finance in Karachi, Pakistan"
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title card-title-clickable" onclick="openReport('climate')">
-                    Climate Resilience Project
-                    <span class="click-hint">Click for Report</span>
-                </div>
-                <div class="card-subtitle">Co-Principal Investigator • ACU Higher Education</div>
-                <span class="grant-badge">Grant Amount: GBP 3,500</span>
-                <div class="card-body" style="margin-top:0.75rem;">
-                    <strong>Project Title:</strong> "Enhance Climate Resilience, Health and Community Services in Low-income semi-urban areas of Sheerin Jinnah Colony, Karachi."
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title card-title-clickable" onclick="openReport('safe')">
-                    SAFE: Anti-Sexual Harassment Awareness
-                    <span class="click-hint">Click for Report</span>
-                </div>
-                <div class="card-subtitle">Co-Principal Investigator • ACU & Martha Farrell Foundation</div>
-                <span class="grant-badge">Grant Amount: GBP 1,000</span>
-                <div class="card-body" style="margin-top:0.75rem;">
-                    Led the SAFE Project for Anti-Sexual Harassment Awareness at Ziauddin University.
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">Media in Training Grant</div>
-                <div class="card-subtitle">Winner • ACU Higher Education (2024–2025)</div>
-                <span class="grant-badge">Grant Amount: GBP 2,000</span>
-            </div>
-
-            <div class="card">
-                <div class="card-title">Fellowships & Institutional Milestones</div>
-                <div class="card-body">
-                    <ul>
-                        <li><strong>Supporting Women in Science Fellowship Program (Cohort IV):</strong> Selected amongst the top 100 in Asia (funded by Aga Khan University and Oxford University).</li>
-                        <li><strong>University of Cambridge Bursary:</strong> Awarded GBP 1,600 for two academic courses.</li>
-                        <li><strong>Dr. Aijaz Fatima Women and Child Centre (AFWCC):</strong> Developed and launched the centre at Ziauddin University and Hospital.</li>
-                        <li><strong>ASM Microbe (2023):</strong> Abstract selected for poster presentation titled <em>"Sparfloxacin: Solution To Multi-Drug Resistance"</em>.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Publications Tab -->
-        <div id="publications" class="tab-content">
-            <div class="card">
-                <div class="card-title">Storms of Inequality: The Impact of Climate Change on Gender-Based Violence</div>
-                <div class="card-subtitle">AL-JAMEI Research Journal, 2(03), pp.225-239 (2025)</div>
-                <div class="card-body">Tahir, R., Fahim, B., Liotard, P. and Umrani, Z.A.</div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">Building Harassment-Free Universities: The SAFE Project Experience in Pakistan</div>
-                <div class="card-subtitle">Available at SSRN 5310535 (2025)</div>
-                <div class="card-body">Tahir, R., Umrani, Z. and Fahim, B.</div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">In vitro Activity of Sparfloxacin and Its Combination with Efflux Pump Blockers Against Methicillin-Resistant Staphylococcus aureus and Escherichia coli</div>
-                <div class="card-subtitle">Pakistan Journal of Medicine and Dentistry, 14(3) (2025)</div>
-                <div class="card-body">Tahir, R., Farid, N., Syed, K., Hanif, M.M., Bashir, A. and Ali, K.</div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">Repurposing Amphotericin B: anti-microbial, molecular docking and molecular dynamics simulation studies suggest inhibition potential of Amphotericin B against MRSA</div>
-                <div class="card-subtitle">BMC Chemistry, 17(1), p.67 (2023)</div>
-                <div class="card-body">Farid, N., Bux, K., Ali, K., Bashir, A. and Tahir, R.</div>
-            </div>
-        </div>
-
-        <!-- Education Tab -->
-        <div id="education" class="tab-content">
-            <div class="card">
-                <div class="card-title">PhD in Public Health</div>
-                <div class="card-subtitle">Ziauddin University • Karachi, Pakistan</div>
-                <div class="card-meta">Ongoing</div>
-            </div>
-            <div class="card">
-                <div class="card-title">MS - Biosciences</div>
-                <div class="card-subtitle">Shaheed Zulfiqar Ali Bhutto Institute of Science and Technology (SZABIST) • Karachi, Pakistan</div>
-                <div class="card-meta">2022</div>
-            </div>
-            <div class="card">
-                <div class="card-title">BS - Biosciences</div>
-                <div class="card-subtitle">Shaheed Zulfiqar Ali Bhutto Institute of Science and Technology (SZABIST) • Karachi, Pakistan</div>
-                <div class="card-meta">2020</div>
-            </div>
-        </div>
-
-        <!-- Expertise & Research Interests Tab -->
-        <div id="expertise" class="tab-content">
-            <div class="card">
-                <div class="card-title" style="margin-bottom: 1rem;">Core Expertise</div>
-                <div class="skills-grid">
-                    <div class="chip">Strategic Leadership & Management</div>
-                    <div class="chip">Grant Writing & Fundraising</div>
-                    <div class="chip">International Relations & Partnerships</div>
-                    <div class="chip">Marketing & Communications Strategy</div>
-                    <div class="chip">Sustainability Planning & SDG Integration</div>
-                    <div class="chip">Policy & SOP Development</div>
-                    <div class="chip">Project Management & Implementation</div>
-                    <div class="chip">Capacity Building & Training</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title" style="margin-bottom: 1rem;">Research Interests</div>
-                <div class="skills-grid">
-                    <div class="chip">Anti-Microbial Resistance (AMR)</div>
-                    <div class="chip">Climate Change and Health Nexus</div>
-                    <div class="chip">Gender-Based Violence</div>
-                    <div class="chip">Women's Health & Gender Equity in Public Health</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- References Tab -->
-        <div id="references" class="tab-content">
-            <div class="card">
-                <div class="card-title" style="margin-bottom: 1.25rem;">Professional References</div>
-                <div class="reference-grid">
-                    <div>
-                        <strong>Dr. Shahkamal Hashmi</strong><br>
-                        <span style="color: var(--text-secondary); font-size: 0.9rem;">
-                            Principal, College of Public Health<br>
-                            Ziauddin University<br>
-                            Phone: (+92) 3313377652<br>
-                            Email: shahkamal.hashmi@zu.edu.pk
-                        </span>
-                    </div>
-                    <div>
-                        <strong>Ms. Tanzeelah Rehman</strong><br>
-                        <span style="color: var(--text-secondary); font-size: 0.9rem;">
-                            Manager ORIC, ORIC Department<br>
-                            Ziauddin University<br>
-                            Phone: (+92) 3248228158<br>
-                            Email: tanzeelah.rehman@zu.edu.pk
-                        </span>
-                    </div>
-                </div>
-                <p style="margin-top: 1.25rem; font-size: 0.88rem; color: var(--text-secondary);">* Additional professional references provided upon request.</p>
-            </div>
-        </div>
+        </section>
 
     </div>
 
-    <!-- Pop-up Modal Container -->
-    <div id="projectModal" class="modal-overlay" onclick="closeReportOnBg(event)">
-        <div class="modal-container">
-            <button class="modal-close" onclick="closeReport()">&times;</button>
-            <div id="modalTitle" class="modal-title"></div>
-            <div id="modalMeta" class="modal-meta"></div>
-            <div id="modalBody" class="modal-body"></div>
-        </div>
-    </div>
-
-    <script>
-        function switchTab(tabId, event) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-            if (event && event.currentTarget) {
-                event.currentTarget.classList.add('active');
-            }
-            document.getElementById(tabId).classList.add('active');
-        }
-
-        const projectReports = {
-            svri: {
-                title: "Sexual Violence Research Initiative (SVRI) Grant Report",
-                meta: "Co-Principal Investigator • Funding: USD 116,290",
-                body: `
-                    <h5>Project Overview</h5>
-                    <p><strong>Title:</strong> Evaluating Institutional Practices and Survivor Experiences of Gender-Based Violence in STEM and Non-STEM HEIs in Pakistan.</p>
-                    <p>This study conducts a rigorous multi-institutional evaluation of existing policies, reporting mechanisms, and survivor support infrastructures within Higher Education Institutions across Pakistan.</p>
-                    <h5>Key Objectives & Scope</h5>
-                    <ul>
-                        <li>Assess structural differences in GBV response frameworks between STEM and non-STEM academic environments.</li>
-                        <li>Identify barriers preventing survivors from reporting gender-based violence and accessing psychosocial support.</li>
-                        <li>Formulate policy recommendations for institutional leaders and higher education regulators.</li>
-                    </ul>
-                    <h5>Expected Impact</h5>
-                    <p>Providing evidence-based institutional guidelines to enforce safer, survivor-centric reporting frameworks and policy implementation nationwide.</p>
-                `
-            },
-            acu_sdg: {
-                title: "ACU SDGs Challenge Grant Report",
-                meta: "Principal Investigator (2023–2024) • Funding: GBP 2,500",
-                body: `
-                    <h5>Project Overview</h5>
-                    <p><strong>Title:</strong> Supporting Women's Economic Empowerment by Addressing the Financial Literacy and Gender-based Disparities in Access to Finance in Karachi, Pakistan.</p>
-                    <p>An action-oriented initiative tailored to target systemic economic barriers faced by low-income women in urban Karachi.</p>
-                    <h5>Key Outcomes & Activities</h5>
-                    <ul>
-                        <li>Designed and facilitated community-based financial literacy workshops focusing on basic banking, savings, and digital payment systems.</li>
-                        <li>Evaluated gender disparities in financial institutional access, documenting barriers to credit and account creation.</li>
-                        <li>Collaborated with local grassroots organizations to promote sustainable financial independence for participants.</li>
-                    </ul>
-                `
-            },
-            climate: {
-                title: "Climate Resilience & Public Health Project Report",
-                meta: "Co-Principal Investigator • ACU Higher Education • Funding: GBP 3,500",
-                body: `
-                    <h5>Project Overview</h5>
-                    <p><strong>Title:</strong> Enhance Climate Resilience, Health and Community Services in Low-income semi-urban areas of Sheerin Jinnah Colony, Karachi.</p>
-                    <p>Targeted public health and climate adaptation effort serving vulnerable semi-urban populations in Karachi.</p>
-                    <h5>Key Interventions</h5>
-                    <ul>
-                        <li>Assessed environmental hazards, water sanitation quality, and climate vulnerability factors in Sheerin Jinnah Colony.</li>
-                        <li>Delivered community health awareness training on climate-induced waterborne and heat-related illnesses.</li>
-                        <li>Established operational frameworks to improve local community health service delivery and climate preparedness.</li>
-                    </ul>
-                `
-            },
-            safe: {
-                title: "SAFE: Anti-Sexual Harassment Project Report",
-                meta: "Co-Principal Investigator • ACU & Martha Farrell Foundation • Funding: GBP 1,000",
-                body: `
-                    <h5>Project Overview</h5>
-                    <p><strong>Title:</strong> SAFE Project for Anti-Sexual Harassment Awareness.</p>
-                    <p>Institutional capacity-building and awareness campaign conducted across campuses at Ziauddin University.</p>
-                    <h5>Key Deliverables</h5>
-                    <ul>
-                        <li>Organized awareness sessions for faculty, staff, and students regarding anti-sexual harassment policies and rights.</li>
-                        <li>Developed accessible digital and physical educational materials detailing support channels and reporting protocols.</li>
-                        <li>Strengthened campus committee capacity for handling grievances with confidentiality and care.</li>
-                    </ul>
-                `
-            }
-        };
-
-        function openReport(key) {
-            const report = projectReports[key];
-            if (!report) return;
-
-            document.getElementById('modalTitle').innerText = report.title;
-            document.getElementById('modalMeta').innerText = report.meta;
-            document.getElementById('modalBody').innerHTML = report.body;
-            document.getElementById('projectModal').classList.add('active');
-        }
-
-        function closeReport() {
-            document.getElementById('projectModal').classList.remove('active');
-        }
-
-        function closeReportOnBg(event) {
-            if (event.target.id === 'projectModal') {
-                closeReport();
-            }
-        }
-    </script>
 </body>
 </html>
-<div class="project-card">
-  <h3>
-    SAFE: Anti-Sexual Harassment Awareness 
-    <a href="SAFE-Project-Completion-Report-2.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-      <span class="badge">Click for Report</span>
-    </a>
-  </h3>
-  <p class="subtitle">Co-Principal Investigator • ACU & Martha Farrell Foundation</p>
-  <span class="grant-tag">Grant Amount: GBP 1,000</span>
-  <p class="description">Led the SAFE Project for Anti-Sexual Harassment Awareness at Ziauddin University.</p>
-</div>
