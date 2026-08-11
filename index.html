@@ -61,7 +61,7 @@
             font-size: 1.05rem;
         }
 
-        /* Top Clickable Navigation Tabs */
+        /* Top Navigation Tabs */
         .tabs-nav {
             display: flex;
             justify-content: center;
@@ -191,6 +191,60 @@
         li strong {
             color: var(--text-primary);
         }
+
+        /* Pop-up Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.85); 
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: var(--card-bg);
+            margin: 3% auto;
+            padding: 20px;
+            border: 1px solid var(--accent-color);
+            width: 85%;
+            max-width: 900px;
+            height: 85vh;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .close-btn {
+            color: var(--text-secondary);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            align-self: flex-end;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .modal-body {
+            width: 100%;
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -218,7 +272,7 @@
             <h2>About Me</h2>
             <div class="card">
                 <p class="description">
-                    Doctoral candidate in Public Health and Manager of Linkages and Outreach at Ziauddin University. Experienced public health professional specializing in international institutional relations, climate resilience, grant acquisition, and women's health advocacy.
+                    Doctoral candidate in Public Health and Manager of Linkages and Outreach at Ziauddin University. Experienced public health professional specializing in international institutional relations, climate resilience, grant acquisition, and women's economic empowerment.
                 </p>
             </div>
         </div>
@@ -259,8 +313,8 @@
                 <ul>
                     <li><strong>Public Health Research & Proposal Development:</strong> Qualitative and quantitative research methodology, epidemiological research, and manuscript writing.</li>
                     <li><strong>Grant Acquisition & Management:</strong> Securing and leading international challenge grants (SVRI, ACU Higher Education).</li>
+                    <li><strong>Women's Financial Literacy & Empowerment:</strong> Designing urban community workshops on financial systems and gender equity.</li>
                     <li><strong>Institutional Outreach & Partnerships:</strong> Developing sustainable international linkages, healthcare center development, and policy initiatives.</li>
-                    <li><strong>Climate Change & Community Resilience:</strong> Climate advocacy, youth leadership training, and sustainable development.</li>
                 </ul>
             </div>
         </div>
@@ -269,13 +323,22 @@
         <div id="projects" class="tab-content">
             <h2>Projects</h2>
 
-            <!-- SAFE Project Card with Working PDF Link -->
+            <!-- Women's Financial Literacy Project Card with Working Pop-Up Modal -->
+            <div class="card">
+                <h3>
+                    Women's Financial Literacy & Economic Empowerment
+                    <span class="badge" onclick="openReportModal('Financial-Literacy-Report.pdf')">Click for Report</span>
+                </h3>
+                <p class="subtitle">Principal Investigator • ACU SDGs Challenge Grant</p>
+                <span class="grant-tag">Location: Karachi, Pakistan</span>
+                <p class="description">Addressed financial literacy gaps and gender-based disparities in access to finance by conducting community-based workshops on banking, savings, and digital payment systems for women in urban Karachi.</p>
+            </div>
+
+            <!-- SAFE Project Card with Working Pop-Up Modal -->
             <div class="card">
                 <h3>
                     SAFE: Anti-Sexual Harassment Awareness 
-                    <a href="SAFE-Project-Completion-Report-2.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                        <span class="badge">Click for Report</span>
-                    </a>
+                    <span class="badge" onclick="openReportModal('SAFE-Project-Completion-Report-2.pdf')">Click for Report</span>
                 </h3>
                 <p class="subtitle">Co-Principal Investigator • ACU & Martha Farrell Foundation</p>
                 <span class="grant-tag">Grant Amount: GBP 1,000</span>
@@ -308,6 +371,12 @@
         <!-- TAB 5: Research Papers -->
         <div id="research" class="tab-content">
             <h2>Research Papers & Peer Review</h2>
+
+            <div class="card">
+                <h3>Supporting Women's Economic Empowerment</h3>
+                <p class="subtitle">International Journal of Advanced Research</p>
+                <p class="description">Research paper focusing on addressing financial literacy and gender-based disparities in access to finance in Karachi.</p>
+            </div>
             
             <div class="card">
                 <h3>Peer Reviewer</h3>
@@ -330,20 +399,50 @@
 
     </div>
 
-    <!-- JavaScript to Handle Tab Switching -->
+    <!-- PDF Viewer Modal Pop-up -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeReportModal()">&times;</span>
+            <div class="modal-body">
+                <iframe id="pdfFrame" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Tabs and Pop-up Modal -->
     <script>
         function switchTab(event, tabId) {
-            // Hide all tab contents
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
 
-            // Deactivate all tab buttons
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(button => button.classList.remove('active'));
 
-            // Activate chosen tab and button
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
+        }
+
+        // Functions to control pop-up report viewer
+        function openReportModal(pdfUrl) {
+            const modal = document.getElementById('reportModal');
+            const iframe = document.getElementById('pdfFrame');
+            iframe.src = pdfUrl;
+            modal.style.display = 'block';
+        }
+
+        function closeReportModal() {
+            const modal = document.getElementById('reportModal');
+            const iframe = document.getElementById('pdfFrame');
+            modal.style.display = 'none';
+            iframe.src = '';
+        }
+
+        // Close pop-up if user clicks outside modal container
+        window.onclick = function(event) {
+            const modal = document.getElementById('reportModal');
+            if (event.target == modal) {
+                closeReportModal();
+            }
         }
     </script>
 
