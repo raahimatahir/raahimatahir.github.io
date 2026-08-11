@@ -14,7 +14,6 @@
             --accent-hover: #0284c7;
             --border-color: #1e293b;
             --chip-bg: #0f172a;
-            --modal-bg: rgba(11, 15, 25, 0.85);
         }
 
         * {
@@ -36,50 +35,12 @@
             margin: 0 auto;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .tagline {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        section {
-            margin-bottom: 2.5rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.2rem;
-        }
-
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             transition: transform 0.2s, border-color 0.2s;
         }
 
@@ -87,18 +48,15 @@
             border-color: var(--accent-color);
         }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-title {
+        h3 {
             font-size: 1.2rem;
             font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .subtitle {
@@ -110,6 +68,7 @@
         .description {
             color: var(--text-secondary);
             font-size: 0.95rem;
+            margin-top: 0.5rem;
         }
 
         .badge {
@@ -120,8 +79,8 @@
             border-radius: 4px;
             font-size: 0.8rem;
             font-weight: 500;
-            display: inline-block;
-            transition: background-color 0.2s, color 0.2s;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
         .badge:hover {
@@ -136,48 +95,59 @@
             border-radius: 4px;
             font-size: 0.8rem;
             display: inline-block;
-            margin: 0.5rem 0;
+            margin-top: 0.5rem;
             font-weight: 600;
         }
 
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
+        ul {
+            list-style-type: disc;
+            padding-left: 1.2rem;
+            color: var(--text-secondary);
         }
 
-        a:hover {
-            text-decoration: underline;
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        li strong {
+            color: var(--text-primary);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
-        <header>
-            <img src="profile.jpg" alt="Rahima Tahir" class="profile-img" onerror="this.style.display='none'">
-            <h1>Rahima Tahir</h1>
-            <p class="tagline">Public Health & Biosciences | PhD Candidate & Researcher</p>
-        </header>
 
-        <section id="projects">
-            <h2>Featured Projects & Research</h2>
-            
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">
-                        SAFE: Anti-Sexual Harassment Awareness
-                        <a href="SAFE-Project-Completion-Report-2.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                            <span class="badge">Click for Report</span>
-                        </a>
-                    </span>
-                </div>
-                <p class="subtitle">Co-Principal Investigator • ACU & Martha Farrell Foundation</p>
-                <span class="grant-tag">Grant Amount: GBP 1,000</span>
-                <p class="description">Led the SAFE Project for Anti-Sexual Harassment Awareness at Ziauddin University.</p>
-            </div>
+        <!-- SAFE Project Card -->
+        <div class="card">
+            <h3>
+                SAFE: Anti-Sexual Harassment Awareness 
+                <a href="SAFE-Project-Completion-Report-2.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <span class="badge">Click for Report</span>
+                </a>
+            </h3>
+            <p class="subtitle">Co-Principal Investigator • ACU & Martha Farrell Foundation</p>
+            <span class="grant-tag">Grant Amount: GBP 1,000</span>
+            <p class="description">Led the SAFE Project for Anti-Sexual Harassment Awareness at Ziauddin University.</p>
+        </div>
 
-        </section>
+        <!-- Media in Training Grant Card -->
+        <div class="card">
+            <h3>Media in Training Grant</h3>
+            <p class="subtitle">Winner • ACU Higher Education (2024–2025)</p>
+            <span class="grant-tag">Grant Amount: GBP 2,000</span>
+        </div>
+
+        <!-- Fellowships & Milestones Card -->
+        <div class="card">
+            <h3>Fellowships & Institutional Milestones</h3>
+            <ul style="margin-top: 0.8rem;">
+                <li><strong>Supporting Women in Science Fellowship Program (Cohort IV):</strong> Selected amongst the top 100 in Asia (funded by Aga Khan University and Oxford University).</li>
+                <li><strong>University of Cambridge Bursary:</strong> Awarded GBP 1,600 for two academic courses.</li>
+                <li><strong>Dr. Aijaz Fatima Women and Child Centre (AFWCC):</strong> Developed and launched the centre at Ziauddin University and Hospital.</li>
+                <li><strong>ASM Microbe (2023):</strong> Abstract selected for poster presentation titled <em>"Sparfloxacin: Solution To Multi-Drug Resistance"</em>.</li>
+            </ul>
+        </div>
 
     </div>
 
