@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahima Tahir - Portfolio</title>
+    <title>Rahima Tahir - Resume & Portfolio</title>
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -38,7 +38,7 @@
         /* Header */
         header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .profile-img {
@@ -61,24 +61,24 @@
             font-size: 1.05rem;
         }
 
-        /* Navigation Tabs */
+        /* Top Clickable Navigation Tabs */
         .tabs-nav {
             display: flex;
             justify-content: center;
             gap: 0.8rem;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 2rem;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.8rem;
             flex-wrap: wrap;
         }
 
         .tab-btn {
-            background: none;
-            border: none;
+            background: var(--chip-bg);
+            border: 1px solid var(--border-color);
             color: var(--text-secondary);
             font-size: 0.95rem;
             font-weight: 600;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             cursor: pointer;
             border-radius: 6px;
             transition: all 0.2s ease;
@@ -86,13 +86,14 @@
 
         .tab-btn:hover {
             color: var(--accent-color);
+            border-color: var(--accent-color);
             background-color: var(--card-bg);
         }
 
         .tab-btn.active {
-            color: var(--accent-color);
-            background-color: var(--card-bg);
-            border-bottom: 2px solid var(--accent-color);
+            color: #ffffff;
+            background-color: #0284c7;
+            border-color: var(--accent-color);
         }
 
         /* Tab Content Sections */
@@ -200,10 +201,10 @@
         <header>
             <img src="profile.jpg" alt="Rahima Tahir" class="profile-img" onerror="this.style.display='none'">
             <h1>Rahima Tahir</h1>
-            <p class="tagline">Public Health & Biosciences | PhD Candidate & Researcher</p>
+            <p class="tagline">Public Health & Biosciences | PhD Candidate & Manager of Linkages and Outreach</p>
         </header>
 
-        <!-- Navigation Tabs -->
+        <!-- Navigation Tabs at Top -->
         <nav class="tabs-nav">
             <button class="tab-btn active" onclick="switchTab(event, 'about')">About Me</button>
             <button class="tab-btn" onclick="switchTab(event, 'resume')">Resume</button>
@@ -217,7 +218,7 @@
             <h2>About Me</h2>
             <div class="card">
                 <p class="description">
-                    Doctoral candidate in Public Health and Manager of Linkages and Outreach at Ziauddin University. Dedicated to leading international grant initiatives, climate change leadership, public health research, and cross-institutional collaboration.
+                    Doctoral candidate in Public Health and Manager of Linkages and Outreach at Ziauddin University. Experienced public health professional specializing in international institutional relations, climate resilience, grant acquisition, and women's health advocacy.
                 </p>
             </div>
         </div>
@@ -225,18 +226,28 @@
         <!-- TAB 2: Resume -->
         <div id="resume" class="tab-content">
             <h2>Resume</h2>
+            
             <div class="card">
-                <h3>PhD Candidate in Public Health</h3>
+                <h3>Manager of Linkages and Outreach</h3>
                 <p class="subtitle">Ziauddin University</p>
-                <p class="description">Manager of Linkages and Outreach | Researcher</p>
+                <p class="description">Overseeing institutional partnerships, international grant acquisitions, and strategic community health initiatives.</p>
             </div>
+
             <div class="card">
-                <h3>Fellowships & Institutional Milestones</h3>
+                <h3>Academic Background</h3>
                 <ul style="margin-top: 0.8rem;">
-                    <li><strong>Supporting Women in Science Fellowship Program (Cohort IV):</strong> Selected amongst top participants in Asia (funded by Aga Khan University and Oxford University).</li>
-                    <li><strong>University of Cambridge Bursary:</strong> Awarded GBP 1,600 for academic courses.</li>
-                    <li><strong>Dr. Aijaz Fatima Women and Child Centre (AFWCC):</strong> Developed and launched the centre at Ziauddin University and Hospital.</li>
-                    <li><strong>Climate x Youth Trainer:</strong> Qualified through the Global Alliance of Universities on Climate (GAUC).</li>
+                    <li><strong>PhD in Public Health (Candidate):</strong> Ziauddin University</li>
+                    <li><strong>MS in Biosciences:</strong> SZABIST University</li>
+                    <li><strong>BS in Biosciences:</strong> SZABIST University</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Fellowships & Honors</h3>
+                <ul style="margin-top: 0.8rem;">
+                    <li><strong>Supporting Women in Science Fellowship Program (Cohort IV):</strong> Selected among the top 100 in Asia (funded by Aga Khan University and Oxford University).</li>
+                    <li><strong>University of Cambridge Bursary:</strong> Awarded GBP 1,600 for academic course study.</li>
+                    <li><strong>Climate x Youth Trainer:</strong> Certified through the Global Alliance of Universities on Climate (GAUC).</li>
                 </ul>
             </div>
         </div>
@@ -246,9 +257,10 @@
             <h2>Expertise</h2>
             <div class="card">
                 <ul>
-                    <li><strong>Public Health & Biosciences Research:</strong> Epidemiological study design, quantitative data analysis, and manuscript development.</li>
-                    <li><strong>Grant Writing & Leadership:</strong> Securing and managing international challenge grants and institutional funding.</li>
-                    <li><strong>Institutional Strategic Linkages:</strong> Outreaching and establishing multi-organizational partnerships and health initiatives.</li>
+                    <li><strong>Public Health Research & Proposal Development:</strong> Qualitative and quantitative research methodology, epidemiological research, and manuscript writing.</li>
+                    <li><strong>Grant Acquisition & Management:</strong> Securing and leading international challenge grants (SVRI, ACU Higher Education).</li>
+                    <li><strong>Institutional Outreach & Partnerships:</strong> Developing sustainable international linkages, healthcare center development, and policy initiatives.</li>
+                    <li><strong>Climate Change & Community Resilience:</strong> Climate advocacy, youth leadership training, and sustainable development.</li>
                 </ul>
             </div>
         </div>
@@ -267,35 +279,52 @@
                 </h3>
                 <p class="subtitle">Co-Principal Investigator • ACU & Martha Farrell Foundation</p>
                 <span class="grant-tag">Grant Amount: GBP 1,000</span>
-                <p class="description">Led the SAFE Project for Anti-Sexual Harassment Awareness at Ziauddin University.</p>
+                <p class="description">Led campus safety initiatives and harassment awareness campaigns at Ziauddin University.</p>
             </div>
 
             <!-- Media in Training Grant -->
             <div class="card">
                 <h3>Media in Training Grant</h3>
-                <p class="subtitle">Winner • ACU Higher Education (2024–2025)</p>
+                <p class="subtitle">Winner • ACU Higher Education & SDGs Challenge</p>
                 <span class="grant-tag">Grant Amount: GBP 2,000</span>
-                <p class="description">Awarded competitive grant funding through the ACU Higher Education framework.</p>
+                <p class="description">Awarded competitive grant funding for institutional media training and communications projects.</p>
+            </div>
+
+            <!-- Dr. Aijaz Fatima Women and Child Centre -->
+            <div class="card">
+                <h3>Dr. Aijaz Fatima Women and Child Centre (AFWCC)</h3>
+                <p class="subtitle">Ziauddin University & Hospital</p>
+                <p class="description">Developed and successfully launched the dedicated center supporting women's health and clinical services.</p>
+            </div>
+
+            <!-- SVRI Research Grant Initiatives -->
+            <div class="card">
+                <h3>Sexual Violence Research Initiative (SVRI) Projects</h3>
+                <p class="subtitle">Principal Investigator / Lead Researcher</p>
+                <p class="description">Facilitating research projects focused on gender-based violence prevention and public health advocacy.</p>
             </div>
         </div>
 
         <!-- TAB 5: Research Papers -->
         <div id="research" class="tab-content">
-            <h2>Research Papers</h2>
+            <h2>Research Papers & Peer Review</h2>
+            
             <div class="card">
                 <h3>Peer Reviewer</h3>
-                <p class="subtitle">Journal of Violence Against Women</p>
-                <p class="description">Active peer reviewer evaluating research manuscripts in public health and gender-based violence.</p>
+                <p class="subtitle">Violence Against Women (Journal)</p>
+                <p class="description">Active peer reviewer evaluating academic submissions on gender issues, health equity, and violence prevention.</p>
             </div>
+
             <div class="card">
-                <h3>Economic Disparities Manuscript</h3>
+                <h3>Economic Disparities & Public Health</h3>
                 <p class="subtitle">International Journal of Advanced Research</p>
-                <p class="description">Manuscript passed editorial screening under research focus on economic disparities and public health outcomes.</p>
+                <p class="description">Manuscript passed editorial screening evaluating socio-economic impacts on community health (Manuscript #IJAR-56672).</p>
             </div>
+
             <div class="card">
-                <h3>ASM Microbe (2023)</h3>
-                <p class="subtitle">Poster Presentation</p>
-                <p class="description">Abstract selected for presentation: <em>"Sparfloxacin: Solution To Multi-Drug Resistance"</em>.</p>
+                <h3>ASM Microbe Poster Presentation</h3>
+                <p class="subtitle">American Society for Microbiology</p>
+                <p class="description">Research presentation titled: <em>"Sparfloxacin: Solution To Multi-Drug Resistance"</em> focused on antimicrobial resistance.</p>
             </div>
         </div>
 
@@ -312,7 +341,7 @@
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(button => button.classList.remove('active'));
 
-            // Activate current tab and button
+            // Activate chosen tab and button
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
         }
