@@ -347,25 +347,15 @@
 
         <!-- Navigation Tabs -->
         <nav class="tabs-nav">
-            <button class="tab-btn active" onclick="switchTab(event, 'about')">About Me</button>
-            <button class="tab-btn" onclick="switchTab(event, 'resume')">Resume</button>
+            <button class="tab-btn active" onclick="switchTab(event, 'resume')">Resume</button>
+            <button class="tab-btn" onclick="switchTab(event, 'about')">About Me</button>
             <button class="tab-btn" onclick="switchTab(event, 'expertise')">Expertise</button>
             <button class="tab-btn" onclick="switchTab(event, 'projects')">Projects</button>
             <button class="tab-btn" onclick="switchTab(event, 'research')">Research Papers</button>
         </nav>
 
-        <!-- TAB 1: About Me -->
-        <div id="about" class="tab-content active">
-            <h2>About Me</h2>
-            <div class="card">
-                <p class="description">
-                    Doctoral candidate in Public Health and Manager of Linkages and Outreach at Ziauddin University. Experienced public health professional specializing in international institutional relations, climate resilience, grant acquisition, and women's economic empowerment.
-                </p>
-            </div>
-        </div>
-
-        <!-- TAB 2: Resume -->
-        <div id="resume" class="tab-content">
+        <!-- TAB 1: Resume (Default Active) -->
+        <div id="resume" class="tab-content active">
             <h2>Resume</h2>
             
             <!-- 1. Academic Background First -->
@@ -412,6 +402,16 @@
                     <li><strong>Supporting Women in Science Fellowship Program (Cohort IV):</strong> Selected among top 100 in Asia (funded by Aga Khan University and Oxford University).</li>
                     <li><strong>University of Cambridge Bursary:</strong> Awarded GBP 1,600 for academic course study.</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- TAB 2: About Me -->
+        <div id="about" class="tab-content">
+            <h2>About Me</h2>
+            <div class="card">
+                <p class="description">
+                    Doctoral candidate in Public Health and Manager of Linkages and Outreach at Ziauddin University. Experienced public health professional specializing in international institutional relations, climate resilience, grant acquisition, and women's economic empowerment.
+                </p>
             </div>
         </div>
 
@@ -547,7 +547,6 @@
             event.currentTarget.classList.add('active');
         }
 
-        // Function to open PDF Reports
         function openReportModal(pdfUrl) {
             const modal = document.getElementById('reportModal');
             const iframe = document.getElementById('pdfFrame');
@@ -561,7 +560,6 @@
             modal.style.display = 'block';
         }
 
-        // Function to open YouTube Video with Autoplay
         function openVideoModal(embedUrl) {
             const modal = document.getElementById('reportModal');
             const iframe = document.getElementById('pdfFrame');
@@ -575,7 +573,6 @@
             modal.style.display = 'block';
         }
 
-        // Function to close Modal and stop playback/clear source
         function closeReportModal() {
             const modal = document.getElementById('reportModal');
             const iframe = document.getElementById('pdfFrame');
@@ -583,7 +580,6 @@
             iframe.src = '';
         }
 
-        // Close pop-up if user clicks outside modal container
         window.onclick = function(event) {
             const modal = document.getElementById('reportModal');
             if (event.target == modal) {
