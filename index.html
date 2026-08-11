@@ -264,7 +264,7 @@
             height: 100%;
             border: none;
             border-radius: 4px;
-            background-color: #ffffff;
+            background-color: #000000;
         }
     </style>
 </head>
@@ -367,7 +367,8 @@
             <!-- SVRI Research Grant Project -->
             <div class="card">
                 <h3>
-                    Institutional Practices & Gender-Based Violence in HEIs
+                    Sexual Violence Research Initiative Grant 2026
+                    <span class="badge" onclick="openVideoModal('https://www.youtube.com/embed/EVqmDc57XAk?autoplay=1')">▶ Watch Video</span>
                 </h3>
                 <p class="subtitle">Co-Principal Investigator • Sexual Violence Research Initiative (SVRI)</p>
                 <span class="grant-tag">Grant Amount: USD 116,290</span>
@@ -438,15 +439,15 @@
 
     </div>
 
-    <!-- PDF Viewer Modal Pop-up -->
+    <!-- Media Viewer Modal Pop-up -->
     <div id="reportModal" class="modal">
         <div class="modal-content">
             <div class="modal-header-bar">
-                <a id="downloadPdfBtn" href="#" target="_blank" class="pdf-link-btn">Open PDF in New Tab ↗</a>
+                <a id="downloadPdfBtn" href="#" target="_blank" class="pdf-link-btn">Open Link in New Tab ↗</a>
                 <span class="close-btn" onclick="closeReportModal()">&times;</span>
             </div>
             <div class="modal-body">
-                <iframe id="pdfFrame" src=""></iframe>
+                <iframe id="pdfFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -464,17 +465,35 @@
             event.currentTarget.classList.add('active');
         }
 
-        // Functions to control pop-up report viewer
+        // Function to open PDF Reports
         function openReportModal(pdfUrl) {
             const modal = document.getElementById('reportModal');
             const iframe = document.getElementById('pdfFrame');
             const downloadBtn = document.getElementById('downloadPdfBtn');
             
-            iframe.src = pdfUrl;
+            downloadBtn.style.display = 'inline-block';
+            downloadBtn.innerText = 'Open PDF in New Tab ↗';
             downloadBtn.href = pdfUrl;
+            
+            iframe.src = pdfUrl;
             modal.style.display = 'block';
         }
 
+        // Function to open YouTube Video with Autoplay
+        function openVideoModal(embedUrl) {
+            const modal = document.getElementById('reportModal');
+            const iframe = document.getElementById('pdfFrame');
+            const downloadBtn = document.getElementById('downloadPdfBtn');
+            
+            downloadBtn.style.display = 'inline-block';
+            downloadBtn.innerText = 'Watch on YouTube ↗';
+            downloadBtn.href = 'https://www.youtube.com/watch?v=EVqmDc57XAk';
+            
+            iframe.src = embedUrl;
+            modal.style.display = 'block';
+        }
+
+        // Function to close Modal and stop playback/clear source
         function closeReportModal() {
             const modal = document.getElementById('reportModal');
             const iframe = document.getElementById('pdfFrame');
