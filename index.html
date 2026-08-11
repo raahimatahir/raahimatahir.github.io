@@ -6,14 +6,14 @@
     <title>Rahima Tahir - Resume & Portfolio</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #151d2a;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-color: #38bdf8;
-            --accent-hover: #0284c7;
-            --border-color: #1e293b;
-            --chip-bg: #0f172a;
+            --bg-color: #ffffff;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #0284c7;
+            --accent-hover: #0369a1;
+            --border-color: #e2e8f0;
+            --chip-bg: #f1f5f9;
         }
 
         * {
@@ -45,7 +45,7 @@
             padding: 2.5rem;
             border-radius: 12px;
             margin-bottom: 2rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .profile-img-container {
@@ -58,7 +58,7 @@
             border-radius: 16px;
             object-fit: cover;
             border: 3px solid var(--accent-color);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.15);
             transition: transform 0.3s ease;
         }
 
@@ -91,7 +91,7 @@
         .tagline {
             color: var(--text-secondary);
             font-size: 1.1rem;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         /* Responsive Layout for Header */
@@ -118,7 +118,7 @@
             display: flex;
             justify-content: flex-start;
             gap: 0.8rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
             margin-bottom: 2rem;
             padding-bottom: 0.8rem;
             flex-wrap: wrap;
@@ -144,7 +144,7 @@
 
         .tab-btn.active {
             color: #ffffff;
-            background-color: #0284c7;
+            background-color: var(--accent-color);
             border-color: var(--accent-color);
         }
 
@@ -171,16 +171,18 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.2rem;
-            transition: border-color 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .card:hover {
             border-color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
         }
 
         h3 {
             font-size: 1.15rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 0.4rem;
             display: flex;
@@ -192,6 +194,7 @@
         .subtitle {
             color: var(--accent-color);
             font-size: 0.95rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
@@ -203,7 +206,7 @@
         .jd-title {
             color: var(--text-primary);
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-top: 0.8rem;
             margin-bottom: 0.4rem;
         }
@@ -215,7 +218,7 @@
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
             font-size: 0.8rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
             display: inline-block;
@@ -223,11 +226,11 @@
 
         .badge:hover {
             background-color: var(--accent-color);
-            color: var(--bg-color);
+            color: #ffffff;
         }
 
         .grant-tag {
-            background-color: #0369a1;
+            background-color: var(--accent-color);
             color: #ffffff;
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
@@ -262,7 +265,7 @@
             top: 0;
             width: 100%; 
             height: 100%; 
-            background-color: rgba(0, 0, 0, 0.85); 
+            background-color: rgba(15, 23, 42, 0.6); 
             backdrop-filter: blur(4px);
         }
 
@@ -271,13 +274,14 @@
             background-color: var(--card-bg);
             margin: 2% auto;
             padding: 20px;
-            border: 1px solid var(--accent-color);
+            border: 2px solid var(--accent-color);
             width: 85%;
             max-width: 900px;
             height: 88vh;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
         }
 
         .modal-header-bar {
@@ -300,7 +304,7 @@
 
         .pdf-link-btn:hover {
             background-color: var(--accent-color);
-            color: var(--bg-color);
+            color: #ffffff;
         }
 
         .close-btn {
@@ -323,9 +327,9 @@
         iframe {
             width: 100%;
             height: 100%;
-            border: none;
+            border: 1px solid var(--border-color);
             border-radius: 4px;
-            background-color: #000000;
+            background-color: #ffffff;
         }
     </style>
 </head>
@@ -336,7 +340,7 @@
         <!-- Hero Header -->
         <header>
             <div class="profile-img-container">
-                <img src="profile.jpg" alt="Rahima Tahir" class="profile-img" onerror="this.src='https://via.placeholder.com/220x220/151d2a/38bdf8?text=Rahima+Tahir'">
+                <img src="profile.jpg" alt="Rahima Tahir" class="profile-img" onerror="this.src='https://via.placeholder.com/220x220/f1f5f9/0284c7?text=Rahima+Tahir'">
             </div>
             <div class="header-text">
                 <span class="headline-tag">Creating Research with Impact</span>
@@ -371,7 +375,7 @@
             <!-- 2. Working Experience Second -->
             <div class="card">
                 <h3>Working Experience</h3>
-                <p class="subtitle" style="font-weight: 600; margin-top: 0.4rem;">Manager - Linkages and Outreach</p>
+                <p class="subtitle" style="margin-top: 0.4rem;">Manager - Linkages and Outreach</p>
                 <p class="description"><strong>Ziauddin University & Hospital</strong> | Karachi, Pakistan (Jan 2023 – Ongoing)</p>
                 
                 <p class="jd-title">Primary Responsibilities (International Relations & Sustainability Division):</p>
