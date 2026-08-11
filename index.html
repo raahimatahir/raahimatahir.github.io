@@ -27,44 +27,96 @@
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
-        /* Header */
+        /* Hero Header Section */
         header {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 12px;
             margin-bottom: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-img-container {
+            flex-shrink: 0;
         }
 
         .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+            border-radius: 16px;
             object-fit: cover;
             border: 3px solid var(--accent-color);
-            margin-bottom: 1rem;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+
+        .header-text {
+            flex-grow: 1;
+        }
+
+        .headline-tag {
+            display: inline-block;
+            color: var(--accent-color);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
+            font-weight: 800;
             margin-bottom: 0.4rem;
             color: var(--text-primary);
+            line-height: 1.2;
         }
 
         .tagline {
             color: var(--text-secondary);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* Responsive Layout for Header */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.8rem 1.2rem;
+                gap: 1.5rem;
+            }
+
+            .profile-img {
+                width: 170px;
+                height: 170px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
         }
 
         /* Top Navigation Tabs */
         .tabs-nav {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 0.8rem;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 2rem;
@@ -78,7 +130,7 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
             font-weight: 600;
-            padding: 0.6rem 1.2rem;
+            padding: 0.65rem 1.3rem;
             cursor: pointer;
             border-radius: 6px;
             transition: all 0.2s ease;
@@ -281,14 +333,19 @@
 
     <div class="container">
 
-        <!-- Header -->
+        <!-- Hero Header -->
         <header>
-            <img src="profile.jpg" alt="Rahima Tahir" class="profile-img" onerror="this.style.display='none'">
-            <h1>Rahima Tahir</h1>
-            <p class="tagline">Public Health & Biosciences | PhD Candidate & Manager of Linkages and Outreach</p>
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Rahima Tahir" class="profile-img" onerror="this.src='https://via.placeholder.com/220x220/151d2a/38bdf8?text=Rahima+Tahir'">
+            </div>
+            <div class="header-text">
+                <span class="headline-tag">Creating Research with Impact</span>
+                <h1>Rahima Tahir</h1>
+                <p class="tagline">Public Health & Biosciences | PhD Candidate & Manager of Linkages and Outreach</p>
+            </div>
         </header>
 
-        <!-- Navigation Tabs at Top -->
+        <!-- Navigation Tabs -->
         <nav class="tabs-nav">
             <button class="tab-btn active" onclick="switchTab(event, 'about')">About Me</button>
             <button class="tab-btn" onclick="switchTab(event, 'resume')">Resume</button>
