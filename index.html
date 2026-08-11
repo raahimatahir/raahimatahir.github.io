@@ -35,27 +35,103 @@
             margin: 0 auto;
         }
 
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-primary);
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* Navigation Tabs */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            color: var(--accent-color);
+            background-color: var(--card-bg);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-color);
+            background-color: var(--card-bg);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        /* Tab Content Sections */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Section Titles */
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Cards */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            transition: transform 0.2s, border-color 0.2s;
+            transition: border-color 0.2s;
         }
 
         .card:hover {
             border-color: var(--accent-color);
         }
 
-        h3 {
+        .card-header-title {
             font-size: 1.2rem;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             flex-wrap: wrap;
         }
 
@@ -75,12 +151,13 @@
             background-color: var(--chip-bg);
             color: var(--accent-color);
             border: 1px solid var(--border-color);
-            padding: 0.2rem 0.6rem;
+            padding: 0.25rem 0.6rem;
             border-radius: 4px;
             font-size: 0.8rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s ease;
+            display: inline-block;
         }
 
         .badge:hover {
@@ -95,7 +172,7 @@
             border-radius: 4px;
             font-size: 0.8rem;
             display: inline-block;
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
             font-weight: 600;
         }
 
@@ -106,7 +183,7 @@
         }
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         li strong {
@@ -118,38 +195,95 @@
 
     <div class="container">
 
-        <!-- SAFE Project Card -->
-        <div class="card">
-            <h3>
-                SAFE: Anti-Sexual Harassment Awareness 
-                <a href="SAFE-Project-Completion-Report-2.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                    <span class="badge">Click for Report</span>
-                </a>
-            </h3>
-            <p class="subtitle">Co-Principal Investigator • ACU & Martha Farrell Foundation</p>
-            <span class="grant-tag">Grant Amount: GBP 1,000</span>
-            <p class="description">Led the SAFE Project for Anti-Sexual Harassment Awareness at Ziauddin University.</p>
+        <!-- Header -->
+        <header>
+            <img src="profile.jpg" alt="Rahima Tahir" class="profile-img" onerror="this.style.display='none'">
+            <h1>Rahima Tahir</h1>
+            <p class="tagline">Public Health & Biosciences | PhD Candidate & Researcher</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('projects')">Featured Projects & Research</button>
+            <button class="tab-btn" onclick="switchTab('expertise')">Expertise</button>
+            <button class="tab-btn" onclick="switchTab('resume')">Resume</button>
+        </nav>
+
+        <!-- TAB 1: Featured Projects & Research -->
+        <div id="projects" class="tab-content active">
+            <h2>Featured Projects & Research</h2>
+
+            <!-- SAFE Project Card with Working PDF Link -->
+            <div class="card">
+                <div class="card-header-title">
+                    <span>SAFE: Anti-Sexual Harassment Awareness</span>
+                    <a href="SAFE-Project-Completion-Report-2.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <span class="badge">Click for Report</span>
+                    </a>
+                </div>
+                <p class="subtitle">Co-Principal Investigator • ACU & Martha Farrell Foundation</p>
+                <span class="grant-tag">Grant Amount: GBP 1,000</span>
+                <p class="description">Led the SAFE Project for Anti-Sexual Harassment Awareness at Ziauddin University.</p>
+            </div>
+
+            <!-- Media in Training Grant -->
+            <div class="card">
+                <div class="card-header-title">Media in Training Grant</div>
+                <p class="subtitle">Winner • ACU Higher Education (2024–2025)</p>
+                <span class="grant-tag">Grant Amount: GBP 2,000</span>
+            </div>
+
+            <!-- Fellowships & Milestones -->
+            <div class="card">
+                <div class="card-header-title">Fellowships & Institutional Milestones</div>
+                <ul style="margin-top: 0.8rem;">
+                    <li><strong>Supporting Women in Science Fellowship Program (Cohort IV):</strong> Selected amongst the top 100 in Asia (funded by Aga Khan University and Oxford University).</li>
+                    <li><strong>University of Cambridge Bursary:</strong> Awarded GBP 1,600 for two academic courses.</li>
+                    <li><strong>Dr. Aijaz Fatima Women and Child Centre (AFWCC):</strong> Developed and launched the centre at Ziauddin University and Hospital.</li>
+                    <li><strong>ASM Microbe (2023):</strong> Abstract selected for poster presentation titled <em>"Sparfloxacin: Solution To Multi-Drug Resistance"</em>.</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Media in Training Grant Card -->
-        <div class="card">
-            <h3>Media in Training Grant</h3>
-            <p class="subtitle">Winner • ACU Higher Education (2024–2025)</p>
-            <span class="grant-tag">Grant Amount: GBP 2,000</span>
+        <!-- TAB 2: Expertise -->
+        <div id="expertise" class="tab-content">
+            <h2>Expertise</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>Public Health Research & Bioscience:</strong> Project design, epidemiological research, and peer review.</li>
+                    <li><strong>Grant Writing & Leadership:</strong> Successful acquisition and execution of competitive international grants.</li>
+                    <li><strong>Community & Policy Engagement:</strong> Development of university initiatives and public health outreach.</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Fellowships & Milestones Card -->
-        <div class="card">
-            <h3>Fellowships & Institutional Milestones</h3>
-            <ul style="margin-top: 0.8rem;">
-                <li><strong>Supporting Women in Science Fellowship Program (Cohort IV):</strong> Selected amongst the top 100 in Asia (funded by Aga Khan University and Oxford University).</li>
-                <li><strong>University of Cambridge Bursary:</strong> Awarded GBP 1,600 for two academic courses.</li>
-                <li><strong>Dr. Aijaz Fatima Women and Child Centre (AFWCC):</strong> Developed and launched the centre at Ziauddin University and Hospital.</li>
-                <li><strong>ASM Microbe (2023):</strong> Abstract selected for poster presentation titled <em>"Sparfloxacin: Solution To Multi-Drug Resistance"</em>.</li>
-            </ul>
+        <!-- TAB 3: Resume -->
+        <div id="resume" class="tab-content">
+            <h2>Resume</h2>
+            <div class="card">
+                <p class="subtitle">PhD Candidate in Public Health</p>
+                <p class="description">Manager of Linkages and Outreach | Researcher</p>
+            </div>
         </div>
 
     </div>
+
+    <!-- JavaScript to Handle Tab Switching -->
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab content
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Deactivate all tab buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Activate target tab content and button
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
