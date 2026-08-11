@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahima Tahir - Resume & Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
+            --chip-bg: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            header {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .profile-img {
+                margin-bottom: 0;
+                margin-right: 2rem;
+            }
+        }
+
+        .header-content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .header-content h2 {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .header-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--card-bg);
+            border-color: var(--accent-color);
+        }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-btn.active {
+            background-color: var(--card-bg);
+            color: var(--accent-color);
+        }
+
+        /* Content Sections */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-subtitle {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-body {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .card-body ul {
+            padding-left: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .card-body li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Skill Chips */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .chip {
+            background-color: var(--chip-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <!-- Replace profile.jpg with your image file or URL -->
+            <img src="profile.jpg" alt="Rahima Tahir" class="profile-img">
+            <div class="header-content">
+                <h1>Rahima Tahir</h1>
+                <h2>Manager, Linkages and Outreach | PhD Candidate</h2>
+                <p>Passionate professional with extensive experience in international relations, sustainability, public health, and academic outreach. Leading global partnerships, institutional sustainability, and evidence-based advocacy.</p>
+                <div class="social-links">
+                    <a href="mailto:raahimatahir@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/raahima-tahir-105045131" target="_blank">LinkedIn</a>
+                    <a href="https://orcid.org/0009-0002-6777-3721" target="_blank">ORCID</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('experience')">Experience</button>
+            <button class="tab-btn" onclick="switchTab('education')">Education</button>
+            <button class="tab-btn" onclick="switchTab('grants')">Grants & Awards</button>
+            <button class="tab-btn" onclick="switchTab('publications')">Publications</button>
+            <button class="tab-btn" onclick="switchTab('skills')">Expertise</button>
+        </div>
+
+        <!-- Experience Tab -->
+        <div id="experience" class="tab-content active">
+            <div class="card">
+                <div class="card-title">Manager - Linkages and Outreach</div>
+                <div class="card-subtitle">Ziauddin University & Hospital • Karachi, Pakistan</div>
+                <div class="card-meta">Jan 2023 – Ongoing</div>
+                <div class="card-body">
+                    <strong>International Relations & Sustainability Division:</strong>
+                    <ul>
+                        <li>Lead the International and Sustainability Office, overseeing marketing, PR, fundraising, and global collaboration.</li>
+                        <li>Develop strategic marketing and communication plans promoting academic, healthcare, and research excellence.</li>
+                        <li>Lead fundraising activities and write high-quality grant proposals securing funding from international donors.</li>
+                        <li>Embed the United Nations Sustainable Development Goals (SDGs) across academic and operational frameworks.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Tab -->
+        <div id="education" class="tab-content">
+            <div class="card">
+                <div class="card-title">PhD in Public Health</div>
+                <div class="card-subtitle">Ziauddin University, Karachi</div>
+                <div class="card-meta">Ongoing</div>
+            </div>
+            <div class="card">
+                <div class="card-title">MS in Biosciences</div>
+                <div class="card-subtitle">SZABIST, Karachi</div>
+                <div class="card-meta">2022</div>
+            </div>
+            <div class="card">
+                <div class="card-title">BS in Biosciences</div>
+                <div class="card-subtitle">SZABIST, Karachi</div>
+                <div class="card-meta">2020</div>
+            </div>
+        </div>
+
+        <!-- Grants & Achievements Tab -->
+        <div id="grants" class="tab-content">
+            <div class="card">
+                <div class="card-title">Sexual Violence Research Initiative (SVRI) Grant</div>
+                <div class="card-subtitle">Co-Principal Investigator • USD 116,290</div>
+                <div class="card-body">Evaluating Institutional Practices and Survivor Experiences of Gender-Based Violence in STEM and Non-STEM HEIs in Pakistan.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">ACU Higher Education and SDGs Challenge Grant</div>
+                <div class="card-subtitle">Principal Investigator • GBP 2,500 (2023–2024)</div>
+                <div class="card-body">Supporting Women's Economic Empowerment by Addressing Financial Literacy and Gender-based Disparities in Access to Finance in Karachi.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">SAFE Project & Climate Resilience Grants</div>
+                <div class="card-subtitle">Co-Principal Investigator • ACU funded</div>
+                <div class="card-body">Led Anti-Sexual Harassment Awareness campaigns and Climate Resilience initiatives in low-income semi-urban areas of Karachi.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Supporting Women in Science Fellowship</div>
+                <div class="card-subtitle">Aga Khan University & Oxford University</div>
+                <div class="card-body">Selected among the top 100 individuals in Asia for Cohort IV.</div>
+            </div>
+        </div>
+
+        <!-- Publications Tab -->
+        <div id="publications" class="tab-content">
+            <div class="card">
+                <div class="card-title">Storms of Inequality: The Impact of Climate Change on Gender-Based Violence</div>
+                <div class="card-meta">AL-JAMEI Research Journal (2025)</div>
+                <div class="card-body">Tahir, R., Fahim, B., Liotard, P. and Umrani, Z.A.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Building Harassment-Free Universities: The SAFE Project Experience in Pakistan</div>
+                <div class="card-meta">SSRN (2025)</div>
+                <div class="card-body">Tahir, R., Umrani, Z. and Fahim, B.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Repurposing Amphotericin B against MRSA</div>
+                <div class="card-meta">BMC Chemistry (2023)</div>
+                <div class="card-body">Farid, N., Bux, K., Ali, K., Bashir, A. and Tahir, R.</div>
+            </div>
+        </div>
+
+        <!-- Skills Tab -->
+        <div id="skills" class="tab-content">
+            <div class="skills-grid">
+                <div class="chip">Strategic Leadership & Management</div>
+                <div class="chip">Grant Writing & Fundraising</div>
+                <div class="chip">International Relations</div>
+                <div class="chip">Sustainability Planning & SDG Integration</div>
+                <div class="chip">Anti-Microbial Resistance (AMR)</div>
+                <div class="chip">Climate Change & Health Nexus</div>
+                <div class="chip">Gender-Based Violence Research</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            // Remove active class from all buttons and sections
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            // Add active class to selected button and section
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
